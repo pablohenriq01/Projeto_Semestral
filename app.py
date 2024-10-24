@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -14,14 +14,12 @@ class Bebidas:
 app = Flask(__name__)
 
 #config banco de dados PostgreSQL - Pablo
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db_adega'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db_adega'
 
 #config banco de dados MySQL - pip install pymysql
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://usuario:senha@localhost/db_adega'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_adega'
 
 db =SQLAlchemy(app)
-
-
 
 class Bebidas(db.Model):
     id = db.Column(db.Integer, primary_key = True, autoincrement = True )
@@ -29,4 +27,13 @@ class Bebidas(db.Model):
     nome_produto = db.Column(db.String(200), nullable = False)
     marca_produto = db.Column(db.String(150), nullable = False)
     preco_produto = db.Column(db.Float, nullable = False)
-    
+
+@app.route("/cadastrar")
+def cadastrar():
+    return render_template("cadastrar.html")
+
+
+@app.route("/")
+def main():
+    return "Teste"
+app.run()    
