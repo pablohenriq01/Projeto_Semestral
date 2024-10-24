@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
+#pip install Flask-SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -10,7 +11,6 @@ class Bebidas:
         self.preco = preco_bebidas
 
 
-
 app = Flask(__name__)
 
 #config banco de dados PostgreSQL - Pablo
@@ -18,6 +18,7 @@ app = Flask(__name__)
 
 #config banco de dados MySQL - pip install pymysql
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_adega'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://usuario:senha@localhost/db_adega'
 
 db =SQLAlchemy(app)
 
@@ -32,8 +33,17 @@ class Bebidas(db.Model):
 def cadastrar():
     return render_template("cadastrar.html")
 
-
+ 
+    
 @app.route("/")
 def main():
-    return "Teste"
-app.run()    
+    return "Rota principal do projeto"
+
+@app.route("/catalogo")
+def catalogo():
+    lista_bebidas = Bebidas.query.order_by(Bebidas.id)
+
+    return render_template("catalogo.html",
+                           lista_bebidas = lista_bebidas)
+
+app.run()

@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogo Bebidas</title>
+
+  
 </head>
-<body>
-    
-</body>
+    <body>
+        <h1>Bebidas:</h1>
+        
+        <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Tipo
+                        </th>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            Marca
+                        </th>
+                        <th>
+                            Preço
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for bebidas in lista_bebidas %}
+                    <tr>
+                        <td>{{ bebidas.tipo_produto }}</td>
+                        <td>{{ bebidas.nome_produto }}</td>
+                        <td>{{ bebidas.marca_produto }}</td>
+                        <td>{{ bebidas.preco_produto }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+    </body>
+
 </html>
