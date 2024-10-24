@@ -9,3 +9,9 @@ create table Bebidas (
     preco_produto FLOAT,
     PRIMARY KEY (id)
 )
+
+INSERT INTO Bebidas (tipo_produto, nome_produto, marca_produto, preco_produto)
+VALUES
+('Whisky', 'Johnnie Walker Black Label', 'Johnnie Walker', 180.00),
+('Whisky', 'Jameson Irish Whiskey', 'Jameson', 120.00),
+('Whisky', 'Jack Daniels Old No. 7', 'Jack Daniel', 150.00);
