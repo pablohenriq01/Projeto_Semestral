@@ -6,7 +6,7 @@ create table Bebidas (
     nome_produto VARCHAR(200),
     marca_produto VARCHAR(150),
     preco_produto FLOAT
-)
+);
 
 INSERT INTO Bebidas (tipo_produto, nome_produto, marca_produto, preco_produto)
 VALUES

@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Bebidas</title>
+    <title>Cadastro de Bebidas</title>
 </head>
 <body>
-    <h1>
-        Cadastre sua bebida
-    </h1>
+    <h1>Cadastre Sua Bebida</h1>
     
-    
+    <form>
+        <div>
+            <label for="bebida">Insira a Bebida:</label>
+            <input type="text" id="bebida" name="bebida" required>
+        </div>
+        
+        <div>
+            <label for="valor">Valor da Bebida:</label>
+            <input type="number" id="valor" name="valor" step="0.01" required>
+        </div>
+        
+        <button type="submit">Cadastrar</button>
+    </form>
 </body>
 </html>

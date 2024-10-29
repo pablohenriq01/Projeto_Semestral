@@ -16,8 +16,15 @@ app = Flask(__name__)
 #config banco de dados PostgreSQL - Pablo
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db_adega'
 
+#config - Joao
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:CASTELO2004@localhost/testedb'
+
+
 #config banco de dados MySQL - pip install pymysql
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_adega'
+
+# config - joao
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_adega'
+
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://usuario:senha@localhost/db_adega'
 
 db =SQLAlchemy(app)
