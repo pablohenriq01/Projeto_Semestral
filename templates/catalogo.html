@@ -1,43 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo Bebidas</title>
+{% extends "template.html" %}
 
-  
-</head>
+
+{% block catalogo %}
+    <head>
+        <title>Catalogo Bebidas</title>
+
+    </head>
     <body>
-        <h1>Bebidas:</h1>
+        <h2>Bebidas:</h2>
         
-        <table>
+        <table class="table">
                 <thead>
                     <tr>
-                        <th>
-                            Tipo
-                        </th>
-                        <th>
-                            Nome
-                        </th>
-                        <th>
-                            Marca
-                        </th>
-                        <th>
-                            Preço
-                        </th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col">Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for bebidas in lista_bebidas %}
+                    {% for bebidas in catalogo_bebidas %}
                     <tr>
+                        <td scope="col">{{ bebidas.id }}</td>
                         <td>{{ bebidas.tipo_produto }}</td>
                         <td>{{ bebidas.nome_produto }}</td>
                         <td>{{ bebidas.marca_produto }}</td>
                         <td>{{ bebidas.preco_produto }}</td>
+                        <td>
+                            <a href="">Editar</a>
+                            <a>|</a>
+                            <a href="">Excluir</a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
         </table>
     </body>
 
-</html>
+{% endblock %}

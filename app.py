@@ -14,10 +14,10 @@ class Bebidas:
 app = Flask(__name__)
 
 #config banco de dados PostgreSQL - Pablo
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db_adega'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db_adega'
 
 #config - Joao
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:CASTELO2004@localhost/testedb'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:CASTELO2004@localhost/testedb'
 
 
 #config banco de dados MySQL - pip install pymysql
@@ -51,6 +51,8 @@ def catalogo():
     lista_bebidas = Bebidas.query.order_by(Bebidas.id)
 
     return render_template("catalogo.html",
-                           lista_bebidas = lista_bebidas)
+                           catalogo_bebidas = lista_bebidas)
+
+
 
 app.run()
