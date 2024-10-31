@@ -5,27 +5,29 @@
     <link rel="stylesheet" href="../static/bootstrap.min.css">
 </head>
 <body>
-
+  
     <ul class="nav nav-pills justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Inicio</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/catalogo">Catalogo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/cadastrar">Cadastrar</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">Inicio</a>
-        </li>
+        
       </ul>
       <div class="container text-center"">
         {% block catalogo %} {% endblock %}
       </div>
 
-      <div class="container-fluid">
+      <div class="container text-center">
         {% block cadastrar %} {% endblock %}
       </div>
 
       <div class="container-fluid">
         {% block home %} {% endblock %}
+      </div>
 </body>
 </html>

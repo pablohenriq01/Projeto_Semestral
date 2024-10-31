@@ -12,6 +12,7 @@
         <table class="table">
                 <thead>
                     <tr>
+                        <th scope="col">Id</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Marca</th>
@@ -22,6 +23,7 @@
                 <tbody>
                     {% for bebidas in catalogo_bebidas %}
                     <tr>
+                        <td scope="col">{{ bebidas.id }}</td>
                         <td>{{ bebidas.tipo_produto }}</td>
                         <td>{{ bebidas.nome_produto }}</td>
                         <td>{{ bebidas.marca_produto }}</td>
