@@ -1,22 +1,26 @@
 {% extends "template.html" %}
 
 {% block cadastrar %}
-        <title>Cadastro de Bebidas</title>
-    </head>
-    <body>
+    <title>Cadastro de Bebidas</title>
+    <link rel="stylesheet" href="/static/styles_cadastrar_edit.css">
+</head>
+<body>
+
+    
+    <div class="container">
         <h1>Cadastre Sua Bebida</h1>
-        
+
         <form>
             <div class="mb-3">
                 <label for="Nome_bebida">Insira o nome da Bebida:</label>
                 <input type="text" id="Nome_bebida" name="Nome_bebida" required>
             </div>
-            
+
             <div>
                 <label for="valor">Valor da Bebida:</label>
                 <input type="number" id="valor" name="valor" step="0.01" required>
             </div>
-            
+
             <div>
                 <label for="Marca">Marca da bebida:</label>
                 <input type="text" id="Marca" name="Marca" required>
@@ -29,5 +33,6 @@
 
             <button type="submit">Cadastrar</button>
         </form>
-    </body>
+    </div>
+</body>
 {% endblock %}
