@@ -1,0 +1,69 @@
+/* Estilizando o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #191414;
+    color: #B3B3B3;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estilo para o título */
+h2 {
+    text-align: center;
+    color: rgb(37, 63, 183);
+    margin-bottom: 20px;
+}
+
+/* Estilo para a tabela */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para a tabela */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Para arredondar as bordas */
+}
+
+.table th, .table td {
+    border: 1px solid #454645;
+    padding: 12px; /* Aumentar o padding */
+    text-align: left;
+}
+
+/* Estilo para os cabeçalhos da tabela */
+.table th {
+    background-color: rgb(37, 63, 183);
+    color: #fff; /* Cor do texto branca para contraste */
+    font-weight: bold;
+}
+
+/* Estilo para as linhas da tabela */
+.table tr:nth-child(even) {
+    background-color: #2a2a2a; /* Fundo mais escuro */
+}
+
+.table tr:nth-child(odd) {
+    background-color: #1f1f1f; /* Fundo alternativo */
+}
+
+.table tr:hover {
+    background-color: rgba(61, 61, 61, 0.7); /* Efeito de hover mais suave */
+}
+
+/* Estilo para os links de edição e exclusão */
+.table a {
+    color: #1d61b9;
+    text-decoration: none;
+    font-weight: bold; /* Negrito para os links */
+    transition: color 0.3s; /* Efeito de transição */
+}
+
+.table a:hover {
+    text-decoration: underline;
+    color: #ff6f61; /* Mudança de cor no hover */
+}
+
+/* Estilo para o separador entre os links */
+.table a:nth-child(2) {
+    margin: 0 5px;
+}

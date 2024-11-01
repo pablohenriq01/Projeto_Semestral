@@ -1,0 +1,43 @@
+{% extends "template.html" %}
+
+
+{% block catalogo_editar %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Bebidas</title>
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Catálogo de Bebidas</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <center><th>Tipo </th></center>
+                <center><th>Nome</th></center>
+                <center><th>Marca</th></center>
+                <center><th>Preço</th></center>
+                <center><th>Ações</th></center>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bebida in catalogo_bebidas %}
+            <tr>
+                <td>{{ bebida.tipo_produto }}</td>
+                <td>{{ bebida.nome_produto }}</td>
+                <td>{{ bebida.marca_produto }}</td>
+                <td>{{ bebida.preco_produto }}</td>
+                <td>
+                    <a href="#">Editar</a>
+                    <a href="#">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}

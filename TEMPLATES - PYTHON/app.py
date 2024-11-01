@@ -24,8 +24,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db
 
 # config - joao
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_adega'
-
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://usuario:senha@localhost/db_adega'
+# Config - Dennis
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:4668@localhost/db_adega'
 
 db =SQLAlchemy(app)
 
@@ -51,6 +51,13 @@ def catalogo():
     lista_bebidas = Bebidas.query.order_by(Bebidas.id)
 
     return render_template("catalogo.html",
+                           catalogo_bebidas = lista_bebidas)
+
+@app.route("/catalogoadmin")
+def catalogo_editar():
+    lista_bebidas = Bebidas.query.order_by(Bebidas.id)
+
+    return render_template("catalogo_editar.html",
                            catalogo_bebidas = lista_bebidas)
 
 

@@ -8,7 +8,7 @@ create table Bebidas (
     marca_produto VARCHAR(150),
     preco_produto FLOAT,
     PRIMARY KEY (id)
-)
+);
 
 INSERT INTO Bebidas (tipo_produto, nome_produto, marca_produto, preco_produto)
 VALUES
