@@ -56,7 +56,7 @@ def catalogo():
 
 @app.route("/catalogoadmin")
 def catalogo_editar():
-    lista_bebidas = Bebidas.query.order_by(Bebidas.id)
+    lista_bebidas = Bebidas.query.all()
 
     return render_template("catalogo_edit.html",
                            catalogo_bebidas = lista_bebidas)
@@ -72,5 +72,13 @@ def adicionar_bebidas():
     db.session.add(nova_bebida)
     db.session.commit()
     return redirect('/catalogo')
+
+
+@app.route("/excluir/<int:id>", methods=['POST',])
+def excluir_bebidaID(id):
+    bebida = Bebidas.query.filter_by(id = id).first()
+    db.session.delete(bebida)
+    db.session.commit() 
+    return redirect('/catalogoadmin')
 
 app.run()

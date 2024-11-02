@@ -30,8 +30,13 @@
                 <td>{{ bebida.marca_produto }}</td>
                 <td>{{ bebida.preco_produto }}</td>
                 <td>
-                    <a href="#">Editar</a>
-                    <a href="#">Excluir</a>
+                <form>
+                    <button button type="submit" class="btn btn-outline-primary">Editar</button>
+                </form>
+                        <form action="{{ url_for('excluir_bebidaID', id=bebida.id) }}" method="POST" style="display:inline;">
+                            <button class="btn btn-outline-danger" type="submit" 
+                            onclick="return confirm('Quer mesmo excluir o gorô?')">Excluir</button>
+                        </form>
                 </td>
             </tr>
             {% endfor %}
