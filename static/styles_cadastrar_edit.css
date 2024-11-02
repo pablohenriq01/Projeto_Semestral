@@ -5,6 +5,7 @@ body {
     height: 100vh;
     display: flex; 
     flex-direction: column;
+    overflow: hidden;
 }
 
 .fixed-footer {
@@ -82,4 +83,35 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+
+.garrafa {
+    position: absolute;
+    bottom: 0;
+    left: -100px;
+    width: 100px;
+    height: 200px;
+    background-image: url('/static/garrafa.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: moverGarrafa 7s ease-in-out infinite, girarGarrafa 5s linear infinite;
+}
+
+@keyframes moverGarrafa {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    25% {
+        transform: translate(calc(100vw - 100px), -50%) rotate(90deg);
+    }
+    50% {
+        transform: translate(calc(100vw - 100px), calc(100vh - 200px)) rotate(180deg);
+    }
+    75% {
+        transform: translate(-50%, calc(100vh - 200px)) rotate(270deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
