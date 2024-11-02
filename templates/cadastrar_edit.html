@@ -10,26 +10,29 @@
     <div class="container">
         <h1>Cadastre Sua Bebida</h1>
 
-        <form>
+        <form action="/inserir" method="post">
+
             <div class="mb-3">
-                <label for="Nome_bebida">Insira o nome da Bebida:</label>
-                <input type="text" id="Nome_bebida" name="Nome_bebida" required>
+                <label for="Tipo_bebida">Tipo da bebida:</label>
+                <input type="text" id="Tipo_bebida" name="tipo_bebida" required>
             </div>
 
-            <div>
+            <div class="mb-3">
+                <label for="Nome_bebida">Insira o nome da Bebida:</label>
+                <input type="text" id="Nome_bebida" name="nome_bebida" required>
+            </div>
+
+            <div class="mb-3"> 
+                <label for="Marca">Marca da bebida:</label>
+                <input type="text" id="Marca" name="marca" required>
+            </div>
+
+          
+            <div class="mb-3">
                 <label for="valor">Valor da Bebida:</label>
                 <input type="number" id="valor" name="valor" step="0.01" required>
             </div>
-
-            <div>
-                <label for="Marca">Marca da bebida:</label>
-                <input type="text" id="Marca" name="Marca" required>
-            </div>
-
-            <div>
-                <label for="Tipo_bebida">Tipo da bebida:</label>
-                <input type="text" id="Tipo_bebida" name="Tipo_bebida" required>
-            </div>
+            
 
             <button type="submit">Cadastrar</button>
         </form>
