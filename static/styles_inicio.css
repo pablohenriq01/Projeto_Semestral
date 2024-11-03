@@ -1,19 +1,20 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/static/logo_adega.png');
+    background-image: url('/static/logo_adega.png'); 
     background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
+    background-position: 60% 30%; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
     color: #333;
-    margin: 0;
-    padding: 0;
 }
 
+
 header {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 20px;
     text-align: center;
 }
+
 
 nav ul {
     list-style-type: none;
@@ -34,28 +35,65 @@ main {
     padding: 20px;
 }
 
-.produtos-grid {
+.catalogo-button {
+    text-align: center;
+    margin: 0px 0;
+}
+
+.botao-catalogo {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.botao-catalogo:hover {
+    background-color: #383837; /* Cor do botão ao passar o mouse */
+}
+
+
+.shows_grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.produto {
-    border: 1px solid #ddd;
+.doce_encontro {
+    border: 1px solid #000000;
     border-radius: 5px;
     margin: 10px;
     padding: 15px;
     text-align: center;
     width: 200px;
+     align-self: flex-start; 
+     margin-right: auto; 
+    
 }
 
-.produto img {
-    max-width: 100%;
-    height: auto;
+.exalta_samba  {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    align-self: flex-start;
+    margin-left: auto; 
+}
+
+#endereco {
+    margin-top: 300px;
 }
 
 footer {
+    margin-top: 100px;
+    padding: 20px 0;
+    background-color: #000000;
+    color: #ffffff; 
     text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
 }
