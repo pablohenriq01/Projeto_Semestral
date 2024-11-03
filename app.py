@@ -14,7 +14,7 @@ class Bebidas:
 app = Flask(__name__)
 
 #config banco de dados PostgreSQL - Pablo
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db_adega'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db_adega'
 
 #config - Joao
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:CASTELO2004@localhost/testedb'
@@ -23,7 +23,7 @@ app = Flask(__name__)
 #config banco de dados MySQL - pip install pymysql
 
 # config - joao
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_adega'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_adega'
 # Config - Dennis
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:4668@localhost/db_adega'
 
@@ -49,16 +49,9 @@ def cadastrar():
 
 @app.route("/catalogo")
 def catalogo():
-    lista_bebidas = Bebidas.query.order_by(Bebidas.id)
-
-    return render_template("catalogo_users.html",
-                           catalogo_bebidas = lista_bebidas)
-
-@app.route("/catalogoadmin")
-def catalogo_editar():
     lista_bebidas = Bebidas.query.all()
 
-    return render_template("catalogo_edit.html",
+    return render_template("catalogo_users.html",
                            catalogo_bebidas = lista_bebidas)
 
 @app.route("/inserir", methods=['POST',])
@@ -79,6 +72,6 @@ def excluir_bebidaID(id):
     bebida = Bebidas.query.filter_by(id = id).first()
     db.session.delete(bebida)
     db.session.commit() 
-    return redirect('/catalogoadmin')
+    return redirect('/catalogo')
 
 app.run()
