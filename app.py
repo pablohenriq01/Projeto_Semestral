@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 #pip install Flask-SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
 
@@ -9,6 +9,13 @@ class Bebidas:
         self.nome = nome_bebidas
         self.marca = marca_bebidas
         self.preco = preco_bebidas
+
+class Login:
+    def __init__(self, nome, email, senha):
+        self.nome = nome
+        self.email = email
+        self.marca = senha
+
 
 
 app = Flask(__name__)
@@ -36,8 +43,19 @@ class Bebidas(db.Model):
     marca_produto = db.Column(db.String(150), nullable = False)
     preco_produto = db.Column(db.Float, nullable = False)
 
+class Login(db.Model):
+    id = db.Column(db.Integer, primary_key = True, autoincrement = True )
+    nome = db.Column(db.String(250), nullable = False)
+    email = db.Column(db.String(150), nullable = False)
+    senha = db.Column(db.String(30), nullable = False)
 
+
+#Rotas de telas
 @app.route("/")
+def tela_acesso():
+    return render_template("tela_cadastro_login.html")
+
+@app.route("/home")
 def home():
     return render_template("home.html")
 
@@ -54,6 +72,38 @@ def catalogo():
     return render_template("catalogo_users.html",
                            catalogo_bebidas = lista_bebidas)
 
+
+
+#Rotas para acesso com o banco de dados
+@app.route("/cadastro", methods=['POST',])
+def acesso_cadastro():
+    nome = request.form['nome']
+    email = request.form['email']
+    senha = request.form['senha']
+    confirmSenha = request.form['confirmar_senha']
+    
+    if senha == confirmSenha :
+        novo_usuario = Login(nome = nome, email = email, senha = senha)
+        db.session.add(novo_usuario)
+        db.session.commit()
+
+        return redirect("/catalogo")
+    else:
+        return redirect("/")
+    
+
+@app.route("/login" ,methods=['POST',])
+def acesso_login():
+    email = request.form.get('email')
+    senha = request.form.get('senha')
+
+    verifica_email = Login.query.filter_by(email = email).first()
+    verifica_senha = Login.query.filter_by(senha = senha).first()
+
+    if verifica_email and verifica_senha:
+        return redirect('/catalogo')
+    else:
+        return redirect("/")
 @app.route("/edicao/<int:id>", methods=['POST',])
 def editar(id):
     bebidas = Bebidas.query.filter_by(id = id).first()

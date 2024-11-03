@@ -13,3 +13,10 @@ VALUES
 ('Whisky', 'Johnnie Walker Black Label', 'Johnnie Walker', 180.00),
 ('Whisky', 'Jameson Irish Whiskey', 'Jameson', 120.00),
 ('Whisky', 'Jack Daniels Old No. 7', 'Jack Daniel', 150.00);
+
+create table login(
+    id serial primary key,
+    nome varchar(250) not null,
+    email VARCHAR(150) not null,
+    senha varchar(30) not null
+);

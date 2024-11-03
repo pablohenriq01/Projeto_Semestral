@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>    
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <script src="/static/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+    <div class="container mt-5">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="cadastro-tab" data-bs-toggle="tab" data-bs-target="#cadastro" type="button" role="tab" aria-controls="cadastro" aria-selected="false">Cadastro</button>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <div class="container mt-3">
+                    <form action="/login" method="post">
+                        <div class="mb-3">
+                            <label for="emailLogin" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailLogin" name="email" placeholder="nome@exemplo.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="senhaLogin" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senhaLogin" name="senha" required>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Entrar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="cadastro" role="tabpanel" aria-labelledby="cadastro-tab">
+                <div class="container mt-3">
+                    <form action="/cadastro" method="post">
+                        <div class="mb-3">
+                            <label for="nomeCadastro" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="nomeCadastro" name="nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailCadastro" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailCadastro" name="email" placeholder="nome@exemplo.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="senhaCadastro" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senhaCadastro" name="senha" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmarSenha" class="form-label">Confirmar Senha</label>
+                            <input type="password" class="form-control" id="confirmarSenha" name="confirmar_senha" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
