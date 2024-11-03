@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+
+{% block cadastrar %}
+    <title>Editar Bebida</title>
+    <link rel="stylesheet" href="/static/styles_cadastrar_edit.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar bebida</h1>
+        <div class="garrafa"></div>
+
+        <form action="/editar/{{ lista_bebidas.id }}" method="post">
+            <div class="mb-3">
+                <label for="Tipo_bebida">Tipo de Bebida:</label>
+                <input type="text" id="Tipo_bebida" name="tipo_bebida" value="{{ lista_bebidas.tipo_produto }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="Nome_bebida">Insira o nome da Bebida:</label>
+                <input type="text" id="Nome_bebida" name="nome_bebida"
+                       value="{{ lista_bebidas.nome_produto }}">
+            </div>
+
+            <div class="mb-3"> 
+                <label for="Marca">Marca da bebida:</label>
+                <input type="text" id="Marca" name="marca" 
+                       value="{{ lista_bebidas.marca_produto }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="valor">Valor da Bebida:</label>
+                <input type="number" id="valor" name="valor" step="0.01"
+                       value="{{ lista_bebidas.preco_produto }}">
+            </div>
+
+            <button type="submit" class="btn btn-outline-success">Editar</button>
+        </form>
+    </div>
+</body>
+{% endblock %}

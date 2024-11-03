@@ -14,10 +14,10 @@ class Bebidas:
 app = Flask(__name__)
 
 #config banco de dados PostgreSQL - Pablo
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db_adega'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db_adega'
 
 #config - Joao
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:CASTELO2004@localhost/testedb'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:CASTELO2004@localhost/testedb'
 
 
 #config banco de dados MySQL - pip install pymysql
@@ -54,6 +54,12 @@ def catalogo():
     return render_template("catalogo_users.html",
                            catalogo_bebidas = lista_bebidas)
 
+@app.route("/edicao/<int:id>", methods=['POST',])
+def editar(id):
+    bebidas = Bebidas.query.filter_by(id = id).first()
+
+    return render_template("editar.html", lista_bebidas = bebidas)
+
 @app.route("/inserir", methods=['POST',])
 def adicionar_bebidas():
     tipo = request.form['tipo_bebida']
@@ -66,6 +72,17 @@ def adicionar_bebidas():
     db.session.commit()
     return redirect('/catalogo')
 
+@app.route("/editar/<int:id>", methods=['POST',])
+def editar_bebidas(id):
+   
+    bebidas = Bebidas.query.filter_by(id = id).first()
+    bebidas.tipo_produto = request.form['tipo_bebida']
+    bebidas.nome_produto = request.form['nome_bebida']
+    bebidas.marca_produto = request.form['marca']
+    bebidas.preco_produto = float(request.form['valor'])
+    db.session.commit()
+    
+    return redirect('/catalogo')
 
 @app.route("/excluir/<int:id>", methods=['POST',])
 def excluir_bebidaID(id):
