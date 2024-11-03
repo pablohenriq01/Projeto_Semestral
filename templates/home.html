@@ -1,10 +1,55 @@
 {% extends "template.html" %}
 
 {% block home %}
-    <title>Home</title>
-        </head>
-        <body>
-            <h1>Home</h1>
-        </body>
-    </html>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/static/styles_inicio.css">
+</head>
+<body>
+    <header>
+        <h1>Adega Comércio</h1>
+        <nav>
+            <ul>
+                <li><a href="#shows">Dias de Show</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="shows">
+            <h2>Shows</h2>
+            <div class="produtos-grid">
+                <div class="produto">
+                    <img src="/static/produto1.jpg" alt="Produto 1">
+                    <h3>Doce Encontro</h3>
+                    <span>Entrada R$ 50,00</span>
+                </div>
+                <div class="produto">
+                    <img src="/static/produto2.jpg" alt="Produto 2">
+                    <h3>Vinho Branco</h3>
+                    <p>Descrição do vinho branco.</p>
+                    <span>R$ 39,90</span>
+                </div>
+                <div class="produto">
+                    <img src="/static/produto3.jpg" alt="Produto 3">
+                    <h3>Espumante</h3>
+                    <p>Descrição do espumante.</p>
+                    <span>R$ 59,90</span>
+                </div>
+                <!-- Adicione mais produtos conforme necessário -->
+            </div>
+        </section>
+        
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Informações sobre a adega, sua história, e o que a torna especial.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Contato: contato@adegacomercio.com</p>
+        <p>&copy; 2024 Adega Comércio. Todos os direitos reservados.</p>
+    </footer>
+</body>
 {% endblock %}

@@ -1,11 +1,14 @@
 body {
     font-family: Arial, sans-serif;
     background-image: url('/static/fundo_catalogo.png');
-    background-size: 1920px 1080px; 
-    background-position: center 19% 60% 30%; /* Centraliza a imagem */
+    background-size: cover; 
+    background-position: center; 
     background-repeat: no-repeat;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
+
 
 
 h2 {
