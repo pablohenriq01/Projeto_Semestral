@@ -1,49 +1,97 @@
-
 {% block home %}
-    <title>Inicio</title>
+<head>
+    <title>Início | Adega do Ponto</title>
     <link rel="stylesheet" href="/static/styles_inicio.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bem-vindo à Adega do Ponto, seu destino para shows, bebidas e diversão!">
 </head>
 <body>
     <header>
         <h1>Adega do Ponto</h1>
         <nav>
             <ul>
-                <li><a href="#shows">Dias de Show</a></li>
+                <li><a href="#shows">Shows Esta Semana</a></li>
                 <li><a href="#endereco">Endereço</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
+    
     <div class="catalogo-button">
         <a href="/catalogo" class="botao-catalogo">Ver Catálogo de Bebidas</a>
     </div>
 
     <main>
+        
         <section id="shows">
             <h2>Shows</h2>
+
+            
+            <div class="entry-info">
+                <p><strong>Mulheres, a entrada é gratuita até 21:30!</strong></p>
+            </div>
+
             <div class="shows_grid">
-                <div class="doce_encontro">
+                
+                <div class="show-item">
                     <h3>Doce Encontro</h3>
-                    <span>Entrada R$ 50,00</span>
+                    <p><strong>Horário:</strong> 19:00</p>
+                    <p><strong>Entrada:</strong> R$ 50,00</p>
+                    <p>Com o melhor do samba e pagode, não perca a chance de curtir um show cheio de energia!</p>
                 </div>
-               
-                <div class="exalta_samba">
-                    <h3>Exalta Samba</h3>
-                    <span>R$ 70,00 </span>
+                
+                
+                <div class="show-item">
+                    <h3>ExaltaSamba</h3>
+                    <p><strong>Horário:</strong> 21:00</p>
+                    <p><strong>Entrada:</strong> R$ 70,00</p>
+                    <p>O Exalta traz grandes clássicos do samba, para dançar até o amanhecer!</p>
+                </div>
+                
+                
+                <div class="show-item">
+                    <h3>Kyan/Kayblack</h3>
+                    <p><strong>Horário:</strong> 22:00</p>
+                    <p><strong>Entrada:</strong> R$ 90,00</p>
+                    <p>Noite de muito trap</p>
+                </div>
+
+                
+                <div class="show-item">
+                    <h3>Belo</h3>
+                    <p><strong>Horário:</strong> 23:30</p>
+                    <p><strong>Entrada:</strong> R$ 80,00</p>
+                    <p>Venha curtir belo! na melhor adega de SP</p>
+                </div>
+
+                
+                <div class="show-item">
+                    <h3>Vulgo Fk</h3>
+                    <p><strong>Horário:</strong> 00:30</p>
+                    <p><strong>Entrada:</strong> R$ 150,00</p>
+                    <p>Venha curtir o do Vulgo Fk show inesquecível!</p>
                 </div>
             </div>
         </section>
         
+        
         <section id="endereco">
             <h2>Endereço</h2>
-            <p>Avenida aprigio 455, Taboão da serra</p>
+            <p>Avenida Aprigio, 455, Taboão da Serra</p>
+        </section>
+        
+        <!-- Seção de Contato -->
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Se você tiver perguntas, entre em contato pelo email:</p>
+            <p><a href="mailto:contato@adegadoponto.com.br">contato@adegadoponto.com.br</a></p>
         </section>
     </main>
     
     <footer>
-        <p>Contato: contato@adegadoponto.com.br</p>
-        <p>&copy; 2024 Adega Do Ponto. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Adega do Ponto. Todos os direitos reservados.</p>
     </footer>
 </body>
 {% endblock %}

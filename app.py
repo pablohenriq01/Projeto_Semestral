@@ -30,9 +30,9 @@ app = Flask(__name__)
 #config banco de dados MySQL - pip install pymysql
 
 # config - joao
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_adega'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_adega'
 # Config - Dennis
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:4668@localhost/db_adega'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:4668@localhost/db_adega'
 
 db =SQLAlchemy(app)
 
