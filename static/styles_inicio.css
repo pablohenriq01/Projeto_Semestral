@@ -10,7 +10,6 @@ body {
     padding: 0;
 }
 
-/* Cabeçalho */
 header {
     background-color: rgba(255, 255, 255, 0.7); 
     padding: 20px;
@@ -23,12 +22,13 @@ header h1 {
     font-size: 2.5em;
     color: #663300; 
     font-weight: bold;
+    
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 nav ul li {
@@ -122,12 +122,11 @@ main {
     font-weight: bold;
 }
 
-/* Seção de Endereço */
 #endereco {
-    margin-top: 100px; /* Ajuste para dar espaço ao footer */
+    margin-top: 100px;
 }
 
-/* Rodapé */
+
 footer {
     margin-top: 60px;
     padding: 20px 0;

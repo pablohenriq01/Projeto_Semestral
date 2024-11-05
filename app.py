@@ -21,7 +21,7 @@ class Login:
 app = Flask(__name__)
 
 #config banco de dados PostgreSQL - Pablo
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db_adega'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:4701@localhost/db_adega'
 
 #config - Joao
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:CASTELO2004@localhost/testedb'
@@ -32,7 +32,7 @@ app = Flask(__name__)
 # config - joao
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:castelo12@localhost/db_adega'
 # Config - Dennis
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:4668@localhost/db_adega'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:4668@localhost/db_adega'
 
 db =SQLAlchemy(app)
 
@@ -87,7 +87,7 @@ def acesso_cadastro():
         db.session.add(novo_usuario)
         db.session.commit()
 
-        return redirect("/catalogo")
+        return redirect("/home")
     else:
         return redirect("/")
     
@@ -101,7 +101,7 @@ def acesso_login():
     verifica_senha = Login.query.filter_by(senha = senha).first()
 
     if verifica_email and verifica_senha:
-        return redirect('/catalogo')
+        return redirect('/home')
     else:
         return redirect("/")
 @app.route("/edicao/<int:id>", methods=['POST',])

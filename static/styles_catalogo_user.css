@@ -1,4 +1,6 @@
 
+
+
 body {
     font-family: 'Arial', sans-serif;
     background-image: url('/static/Apresentação\ de\ Slides\ Corporativo\ Preto\ e\ Amarelo.jpg');
@@ -10,12 +12,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh; 
+    height: 75vh; 
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
-}
-
+} 
 
 h2 {
     text-align: center;
@@ -79,7 +80,6 @@ h2 {
     text-decoration: underline;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .table {
         width: 100%;

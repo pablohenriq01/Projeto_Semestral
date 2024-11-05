@@ -2,6 +2,8 @@
 <head>
     <title>Início | Adega do Ponto</title>
     <link rel="stylesheet" href="/static/styles_inicio.css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bem-vindo à Adega do Ponto, seu destino para shows, bebidas e diversão!">
@@ -10,11 +12,13 @@
     <header>
         <h1>Adega do Ponto</h1>
         <nav>
-            <ul>
-                <li><a href="#shows">Shows Esta Semana</a></li>
-                <li><a href="#endereco">Endereço</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+            <div class="container text-center" class="shows">
+                <ul ul class="nav nav-pills justify-content-center">
+                <li class="nav-item"><a href="#shows">Shows Esta Semana</a></li>
+                <li class="nav-item"><a href="#endereco">Endereço</a></li>
+                <li class="nav-item"><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -82,7 +86,6 @@
             <p>Avenida Aprigio, 455, Taboão da Serra</p>
         </section>
         
-        <!-- Seção de Contato -->
         <section id="contato">
             <h2>Contato</h2>
             <p>Se você tiver perguntas, entre em contato pelo email:</p>
@@ -90,8 +93,5 @@
         </section>
     </main>
     
-    <footer>
-        <p>&copy; 2024 Adega do Ponto. Todos os direitos reservados.</p>
-    </footer>
 </body>
 {% endblock %}
