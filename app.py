@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, render_template, request, redirect, flash, session
 #pip install Flask-SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
 
@@ -75,6 +75,7 @@ def catalogo():
 
 
 #Rotas para acesso com o banco de dados
+app.secret_key = "adeguinha"
 @app.route("/cadastro", methods=['POST',])
 def acesso_cadastro():
     nome = request.form['nome']
@@ -86,9 +87,10 @@ def acesso_cadastro():
         novo_usuario = Login(nome = nome, email = email, senha = senha)
         db.session.add(novo_usuario)
         db.session.commit()
-
-        return redirect("/home")
+        flash("Faça o login para continuar para continuar." , "success")
+        return redirect("/")
     else:
+        flash("As senhas não são iguais.", "error")        
         return redirect("/")
     
 
@@ -103,7 +105,10 @@ def acesso_login():
     if verifica_email and verifica_senha:
         return redirect('/home')
     else:
+        flash("Email ou senha errados.", "error")
         return redirect("/")
+
+
 @app.route("/edicao/<int:id>", methods=['POST',])
 def editar(id):
     bebidas = Bebidas.query.filter_by(id = id).first()

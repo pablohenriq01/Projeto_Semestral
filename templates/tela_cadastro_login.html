@@ -10,6 +10,20 @@
 </head>
 <body>
     <div class="container mt-5">
+
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="container mt-4">
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ 'success' if category == 'success' else 'danger' }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
@@ -59,6 +73,7 @@
             </div>
         </div>
     </div>
+    
 
 </body>
 </html>
