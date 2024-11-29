@@ -87,7 +87,7 @@ def acesso_cadastro():
         novo_usuario = Login(nome = nome, email = email, senha = senha)
         db.session.add(novo_usuario)
         db.session.commit()
-        flash("Faça o login para continuar para continuar." , "success")
+        flash("Faça o login para continuar." , "success")
         return redirect("/")
     else:
         flash("As senhas não são iguais.", "error")        
@@ -102,12 +102,15 @@ def acesso_login():
     verifica_email = Login.query.filter_by(email = email).first()
     verifica_senha = Login.query.filter_by(senha = senha).first()
 
-    if verifica_email and verifica_senha:
-        return redirect('/home')
-    else:
-        flash("Email ou senha errados.", "error")
+    if verifica_email:
+        if verifica_email and verifica_senha:
+            return redirect('/home')
+        else:
+            flash("A senha está errada. Digite a senha correta!", "error")
+            return redirect("/")
+    else: 
+        flash("Email não existente.")
         return redirect("/")
-
 
 @app.route("/edicao/<int:id>", methods=['POST',])
 def editar(id):
